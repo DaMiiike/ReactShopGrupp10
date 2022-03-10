@@ -1,0 +1,6 @@
+.homeBackground {
+    background-color: yellow;
+    background-image: url(../../images/ferrari.jpg);
+    background-size: cover;
+    height: 100vh;
+}
