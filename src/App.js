@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Navbar from "./components/Navbar/Navbar";
 import './App.css';
 import {
@@ -11,11 +11,20 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import Cart from './components/Cart'
+import Checkout from './pages/Checkout';
 
 
 
 function App() {
-  
+  const [checkoutProduct, setCheckoutProduct] = useState([]);
+
+  const addCheckout = (newCheckoutProduct) => {
+    setCheckoutProduct([
+      ...checkoutProduct,
+      newCheckoutProduct
+    ])
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,15 +33,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Products" element={<Products />} />
-        <Route path="/products/:id" element={<Product />} />
+        <Route path="/products/:id" element={<Product addCheckout={addCheckout}/>} />
+        <Route path="/checkout" element={<Checkout />} />
         
     </Routes>
-  </BrowserRouter>,
+    {/* <Checkout addCheckout={addCheckout}/> for testing purposes */}
+    <Footer />
+  </BrowserRouter>
      
-      
-      
-    
-      <Footer />
     </div>
   );
 }
