@@ -29,11 +29,12 @@ function Product(props) {
   
   return (
     <div>
-      <h1>från Product {params.id}</h1>
+      <h1>Product</h1>
       <h2>{product.title}</h2>
-      <p>Pris: {product.price} - Antal i lager: {product.storage} st</p>
+      <p>Pris: {product.price} € - Antal i lager: {product.storage} st</p>
       <p>{product.description}</p>
       <img src={product.url} alt='car'/>
+      <p>Article number: {params.id}</p>
       <button onClick={handleAddBtn}>Buy</button>
     </div>
   )
