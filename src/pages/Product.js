@@ -6,7 +6,7 @@ function Product(props) {
   const params = useParams();
 
   const handleAddBtn = () => {
-      const newCheckoutProduct = {id: 1, title: 'Yes I made It'};
+      const newCheckoutProduct = product;
       props.addCheckout(newCheckoutProduct)
   }
 
