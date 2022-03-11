@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { cloneElement } from 'react'
 import {Link} from 'react-router-dom'
 
 function Checkout({checkoutProduct}) {
+
+  console.log(checkoutProduct.length)
+  const productPrice = checkoutProduct.map((price) => 
+    console.log(price.price)
+  );
+  // const sum = ;
+  
 
   return (
     <div>
       
       <h1>Checkout</h1>
       {checkoutProduct.length === 0
-      ? <div><p>Your cart is empty, have a look at what is in stock</p>
+      ? <div><p>Your cart is empty, have a look at what we have in stock</p>
       <Link to="/products">
         <button>Cars in stock</button>
       </Link>
@@ -43,7 +50,7 @@ function Checkout({checkoutProduct}) {
             ))
       
           }
-        <h2>Total cost:</h2>
+        <h2>Total cost: {(checkoutProduct.length) * productPrice}</h2>
       </div>
       }
       
