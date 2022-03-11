@@ -13,11 +13,12 @@ import Checkout from './pages/Checkout';
 
 function App() {
   const [checkoutProduct, setCheckoutProduct] = useState([]);
+  const [quantity, setQuantity] = useState(1)
 
   const addCheckout = (newCheckoutProduct) => {
     setCheckoutProduct([
       ...checkoutProduct,
-      newCheckoutProduct
+      {...newCheckoutProduct, qty: +1}
     ])
   }
 

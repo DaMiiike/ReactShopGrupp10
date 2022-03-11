@@ -3,11 +3,12 @@ import {Link} from 'react-router-dom'
 
 function Checkout({checkoutProduct}) {
 
-  console.log(checkoutProduct.length)
-  const productPrice = checkoutProduct.map((price) => 
-    console.log(price.price)
-  );
-  // const sum = ;
+  const total = checkoutProduct.reduce((x, checkoutProduct) => x + checkoutProduct.price * checkoutProduct.qty, 0)
+
+  // console.log(checkoutProduct.length)
+  // const productPrice = checkoutProduct.map((price) => 
+  //   console.log(price.price)
+  // );
   
 
   return (
@@ -50,7 +51,7 @@ function Checkout({checkoutProduct}) {
             ))
       
           }
-        <h2>Total cost: {(checkoutProduct.length) * productPrice}</h2>
+          <h2>Total:{parseInt(total)}</h2>
       </div>
       }
       
