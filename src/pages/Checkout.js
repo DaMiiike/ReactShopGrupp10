@@ -4,11 +4,6 @@ import {Link} from 'react-router-dom'
 function Checkout({checkoutProduct}) {
 
   const total = checkoutProduct.reduce((x, checkoutProduct) => x + checkoutProduct.price * checkoutProduct.qty, 0)
-
-  // console.log(checkoutProduct.length)
-  // const productPrice = checkoutProduct.map((price) => 
-  //   console.log(price.price)
-  // );
   
 
   return (
